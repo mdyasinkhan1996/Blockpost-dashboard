@@ -1,0 +1,88 @@
+#app .navbar{
+    height: 8vh;
+}
+.loginSection{
+    background: aliceblue;
+    padding: 50px 0;
+}
+.loginForm{
+    position: relative;
+    height: 88vh;
+    align-items: center;
+}
+.loginTitle, .resetTitle{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+	background: linear-gradient(to right, red 44%,orange 48%,green 48%,orange 51%,red 54%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.resetTitle{
+	background: linear-gradient(to right, red 28%,orange 43%,green 51%,orange 58%,red 54%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.loginTitle::after, .resetTitle::after{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 5px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, red,orange,green,orange,red);
+}
+.resetTitle::after{
+    width: 300px;
+}
+.forgetContent{
+    justify-content: center;
+    display: flex;
+}
+.forgetText{
+    max-width: 420px;
+    text-align: center;
+    font-size: 18px;
+}
+.forgetText a{
+    color: #ff7500;
+}
+.formTable{
+    width: 350px;
+}
+#formlabelPass, #currPassLabel,#conPsslabel{
+    width: 100%;
+    position: relative;
+    z-index: 5555;
+}
+#formLabelPass, #emailLabel, #currPassLabel, #conPsslabel{
+    width: 100%;
+    position: relative;
+    z-index: 888;
+}
+#formLabelPass label, #emailLabel label, #currPassLabel label, #conPsslabel label{
+    margin-left: 12px;
+}
+.formInputPass, .formInputEmail, .currPassInput, .conPssInput{
+    margin-top: -35px;
+}
+.form-control{
+    border: none !important;
+    border-bottom: 2px solid  #ff7500!important;
+    border-radius: 0 !important;
+}
+.form-control:focus{
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid  #ff7500!important;
+    border-radius: 0 !important;
+}
+.loginBTN{
+    background: #ff7500;
+}
+.loginBTN:hover{
+    background: #ff7500;
+}

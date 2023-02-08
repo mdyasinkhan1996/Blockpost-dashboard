@@ -1,0 +1,35 @@
+.tagSelect .select2-container {
+    width: 100% !important;
+}
+.tagSelect .select2-container--default.select2-container--focus .select2-selection--multiple {
+    height: 200px !important;
+}
+
+/* Tag section starts */
+.multiTags .select2-container--default .select2-selection--multiple{
+    height: 150px;
+}
+/* Tag section ends */
+/* profile section starts */
+.aboutTable{
+    width: 25%;
+}
+.profileRight img{
+    max-width: 220px;
+    height: auto;
+}
+.profileRight h3{
+    background: #e0e0e059;
+    color: #9e6de0;
+}
+.profileName h3{
+    font-weight: 600;
+    color: #9e6de0;
+}
+.contectDetails{
+    font-size: xx-large;
+    font-weight: 600;
+    color: #9e6de0;
+    border-bottom: 2px solid #9e6de0;
+}
+/* profile section ends */
