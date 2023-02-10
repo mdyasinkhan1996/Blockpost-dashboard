@@ -60,21 +60,21 @@ class PostController extends Controller
             'date' => date('Y-m-d'),
         ]);
 
-        
+
         if ($request->hasFile('image')) {
             $postImg = new Image();
             $image = $request->file('image');
             $imageName = $random.time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('assets/images');
             $image->move($destinationPath, $imageName);
-            
-            $postImg->url = 'assets/images'.$imageName??'No image';  
-            $post->image()->save($postImg); 
+
+            $postImg->url = 'assets/images/'.$imageName??'No image';
+            $post->image()->save($postImg);
         }else{
             $post->image->url = 'No image';
             $post->image->save($postImg);
         }
-        
+
         $categories = Categorie::find($request->category);
         $categories->status = 1;
         $categories->save();
@@ -164,7 +164,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $post = Post::find($id);
         $destinationPath = base_path($post->image->url);
         if ($post->image->url != 'No image') {

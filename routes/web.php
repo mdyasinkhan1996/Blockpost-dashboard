@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{UserController, HomeController};
+use App\Http\Controllers\{UserController, HomeController, BlogController};
 use App\Http\Controllers\Auth\{DashboardController, TagsControler, CategoriesControler};
 use App\Http\Controllers\Admin\PostController;
- 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +16,7 @@ use App\Http\Controllers\Admin\PostController;
 |
 */
 // unnesseccery route srats
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/logout', function(){
     auth()->logout();
 });
@@ -47,6 +45,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('tags', TagsControler::class);
 
 });
+Route::get('/', [BlogController::class, 'welCome']);
+Route::get('/blog',[BlogController::class, 'index']);
+Route::get('/show',[BlogController::class, 'show']);
+Route::get('Thirdslidelabel',[BlogController::class, 'Thirdslidelabel'])->name('Thirdslidelabel');
+
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

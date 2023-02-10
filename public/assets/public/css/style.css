@@ -1,0 +1,229 @@
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+/***************************
+ common code section style starts
+ ***************************/
+ .linkItemText{
+    font-size: 18px !important;
+    text-transform: uppercase !important;
+ }
+ .textMediam{
+    font-size: 18px !important;
+ }
+ .HTMediam{
+    font-size: 20px !important;
+    text-transform: uppercase;
+ }
+ .HTlarge{
+    font-size: 22px !important;
+    text-transform: uppercase;
+ }
+ .border_bottom{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fbad1e;
+    position: relative;
+ }
+ .border_bottom::after{
+    position: absolute;
+    content: '';
+    background: #fbad1e;
+    width: 40%;
+    height: 10px;
+    left: 0;
+    bottom: 0;
+ }
+ .padding_1{
+    padding: 1px !important;
+ }
+ .linkText{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #046887;
+ }
+/***************************
+ common code section style ends
+ ***************************/
+/***************************
+ search section style starts
+ ***************************/
+ .search_section{
+    display: none;
+ }
+ .search_section.searchActive{
+    display: block;
+ }
+ .search_style{
+    height: 91.9vh;
+    background: #f3ebd4;
+ }
+ .search{
+    width: 25%;
+ }
+ .navbar_search{
+    width: 78%;
+    background: none;
+    border: none;
+    outline: none;
+ }
+ @media (min-width: 480px) and (max-width: 768px) {
+    .search{
+       width: 70%;
+    }
+  }
+/***************************
+ search section style ends
+ ***************************/
+/***************************
+ bannar section style starts
+ ***************************/
+ .carousel-control-next, .carousel-control-prev {
+    top: 50% !important;
+    display: none !important;
+    width: 30px !important;
+    height: 30px !important;
+    opacity: 1 !important;
+}
+.carousel:hover .carousel-control-prev{
+    display: block !important;
+    left: 5%;
+}
+.carousel:hover .carousel-control-next{
+    display: block !important;
+    right: 5%;
+}
+.bn_popularImg, .trandingImg{
+    width: 70px;
+    height: 70px;
+}
+.bn_popularContent, .trandingContent{
+    padding: 12px 0;
+}
+.bannar_sliderImg{
+    height: 439px;
+}
+/***************************
+ bannar section style ends
+ ***************************/
+/***************************
+ featcher section style starts
+ ***************************/
+ .featcher_backImg, .featcher_backImg2{
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    align-items: flex-end;
+ }
+ .featcher_backImg2{
+    height: 250px;
+ }
+ .featcher_content{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 15px;
+ }
+/***************************
+ featcher section style ends
+ ***************************/
+/***************************
+ letest section style starts
+ ***************************/
+ .letest_postImg{
+    width: 100%;
+ }
+ .letest_postContentP, .service_contentP{
+    font-size: 18px;
+ }
+ .letest_link{
+    padding-top: 12px ;
+    padding-bottom: 12px ;
+ }
+ .letest_link:hover .letest_linkIcon{
+    padding-left: 5px;
+ }
+/***************************
+ letest section style ends
+ ***************************/
+/***************************
+ service section style starts
+ ***************************/
+ .service_content{
+    background: #e1e1e1;
+    cursor: pointer;
+ }
+ .service_contentIcon{
+    color: #046887;
+ }
+ .service_content:hover{
+    background: #fbad1e;
+    color: #ffffff;
+ }
+ .service_content:hover .service_contentIcon{
+    color: #ffffff;
+ }
+/***************************
+ service section style ends
+ ***************************/
+
+
+/**********************************
+ single view section style starts
+ **********************************/
+
+
+/****************************************
+ single view bannar section style starts
+ ****************************************/
+
+ .popular_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+ }
+ .banarPopularPost{
+    margin-top: 110px;
+ }
+
+
+ /* coment_section starts */
+ .coment_section{
+    background: #fff;
+    box-shadow: 0px 3px 0px 2px rgb(210, 209, 209)
+ }
+ .replyBtn{
+    cursor: pointer;
+    background: #fbad1e;
+    color: #046887;
+    text-decoration: none;
+ }
+ /* coment_section ends */
+
+/****************************************
+ single view bannar section style ends
+ ****************************************/
+
+/**********************************
+ single view section style ends
+ **********************************/
+
+
+
+/***************************
+ footer section style starts
+ ***************************/
+ .footer{
+    background: #1f1f1f;
+    color: #ffffff;
+ }
+ .footer a{
+    background: #1f1f1f;
+    color: #ffffff;
+ }
+/***************************
+ footer section style ends
+ ***************************/
