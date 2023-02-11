@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Admin & Dashboard</title>
-      
+
     <!-- theme meta -->
     <meta name="theme-name" content="mono" />
 
@@ -19,12 +19,12 @@
     <link href="{{asset('assets/auth/plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
 
     <link href="{{asset('assets/auth/plugins/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" />
-    
-    
+
+
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    
+
     <link href="{{asset('assets/auth/plugins/toaster/toastr.min.css')}}" rel="stylesheet" />
-    
+
     <!-- MONO CSS -->
     <link id="main-css-href" rel="stylesheet" href="{{asset('assets/auth/css/style.css')}}" />
     <link id="main-css-href" rel="stylesheet" href="{{asset('assets/auth/css/customstyle.css')}}" />
@@ -49,12 +49,12 @@
     </script>
 
     {{-- <div id="toaster"></div> --}}
-    
+
     <!-- ====================================
     ——— WRAPPER
     ===================================== -->
     <div class="wrapper">
-      
+
         <!-- ====================================
           ——— LEFT SIDEBAR WITH OUT FOOTER
         ===================================== -->
@@ -71,15 +71,38 @@
             <div class="sidebar-left" data-simplebar style="height: 100%;">
               <!-- sidebar menu -->
               <ul class="nav sidebar-inner" id="sidebar-menu">
-                  <li class="active">
-                    <a class="sidenav-item-link" href="{{route('dashboard')}}">
-                      <i class="fa-solid fa-bahai"></i>
-                      <span class="nav-text">Business Dashboard</span>
-                    </a>
-                  </li>
-                  <li class="section-title">
-                    Apps
-                  </li>
+                    <li class="active">
+                        <a class="sidenav-item-link" href="{{route('dashboard')}}">
+                            <i class="fa-solid fa-bahai"></i>
+                            <span class="nav-text">Business Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="section-title">
+                        Apps
+                    </li>
+                    <li  class="has-sub" >
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
+                            aria-expanded="false" aria-controls="ui-elements">
+                            <i class="fa-regular fa-folder-closed"></i>
+                            <span class="nav-text">Manage Posts</span> <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul  class="collapse"  id="ui-elements" data-parent="#sidebar-menu">
+                            <div class="sub-menu">
+                                    <li >
+                                    <a class="sidenav-item-link" href="{{route('posts.index')}}">
+                                        <span class="nav-text">Posts</span>
+                                    </a>
+                                    </li>
+
+                                    <li >
+                                    <a class="sidenav-item-link" href="{{route('posts.create')}}">
+                                        <span class="nav-text">Create</span>
+
+                                    </a>
+                                    </li>
+                            </div>
+                        </ul>
+                    </li>
                   <li>
                     <a class="sidenav-item-link" href="{{route('categories.index')}}">
                       <i class="fa-solid fa-border-all"></i>
@@ -97,30 +120,6 @@
                       <i class="fa-solid fa-location-dot"></i>
                       <span class="nav-text">Location</span>
                     </a>
-                  </li>
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
-                      aria-expanded="false" aria-controls="ui-elements">
-                      <i class="fa-regular fa-folder-closed"></i>
-                      <span class="nav-text">Manage Posts</span> <i class="fa-solid fa-angle-down"></i>
-                    </a>
-                    <ul  class="collapse"  id="ui-elements"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                            <li >
-                              <a class="sidenav-item-link" href="{{route('posts.index')}}">
-                                <span class="nav-text">Posts</span>
-                              </a>
-                            </li>
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="{{route('posts.create')}}">
-                                <span class="nav-text">Create</span>
-                                
-                              </a>
-                            </li>
-                      </div>
-                    </ul>
                   </li>
                   {{-- <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
@@ -140,7 +139,7 @@
                     </ul>
                   </li> --}}
                   <li class="section-title">
-                    Pages
+                    Settings
                   </li>
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
@@ -190,7 +189,7 @@
       ——— PAGE WRAPPER
       ===================================== -->
       <div class="page-wrapper">
-        
+
           <!-- Header -->
           <header class="main-header" id="header">
             <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
@@ -256,8 +255,8 @@
                       <li class="dropdown-footer">
                         <form id="logout-form" method="POST" action="{{route('logout')}}">
                             @csrf
-                            <a id="logout-button" class="dropdown-link-item" type="submit" href="javascript:void(0)"> 
-                              <i class="mdi mdi-logout"></i> 
+                            <a id="logout-button" class="dropdown-link-item" type="submit" href="javascript:void(0)">
+                              <i class="mdi mdi-logout"></i>
                               <span class="text-left">Log Out</span>
                             </a>
                             {{-- <button type="submit">logout</button> --}}
@@ -277,10 +276,10 @@
         ===================================== -->
         <div class="content-wrapper">
           @yield('content')
-        
-          
+
+
         </div>
-        
+
           <!-- Footer -->
           <footer class="footer mt-auto">
             <div class="copyright bg-white">
@@ -296,25 +295,25 @@
           </footer>
       </div>
     </div>
-    
-                   
-    
+
+
+
   <script src="{{asset('assets/auth/plugins/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('assets/auth/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('assets/auth/plugins/simplebar/simplebar.min.js')}}"></script>
   <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 
-  
-  
+
+
   <script src="{{asset('assets/auth/plugins/apexcharts/apexcharts.js')}}"></script>
-  
-  
+
+
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  
+
   <script src="{{asset('assets/auth/plugins/toaster/toastr.min.js')}}"></script>
 
-  
+
   <script src="{{asset('assets/auth/js/mono.js')}}"></script>
   <script src="{{asset('assets/auth/js/chart.js')}}"></script>
   <script src="{{asset('assets/auth/js/custom.js')}}"></script>
@@ -360,13 +359,13 @@
       $( document ).ready(function() {
           // select2 js for this app starts
             $('.posttags').select2();
-            
+
             $(".js-tags-tokenizer").select2({
                 tags: true,
                 tokenSeparators: [',', ' ']
             })
           // select2 js for this app ends
-          
+
           // logout js for this app start
           $('#logout-form').click(function (){
               $(this).submit();

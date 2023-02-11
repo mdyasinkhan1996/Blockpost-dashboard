@@ -137,9 +137,6 @@ class PostController extends Controller
             $image->move($destinationPath, $imageName);
             $post->image->url = 'assets/images/'.$imageName??'No image';
             $post->image->save();
-        }else{
-            $post->image->url = 'No image';
-            $post->image->save();
         }
 
         $post->update([

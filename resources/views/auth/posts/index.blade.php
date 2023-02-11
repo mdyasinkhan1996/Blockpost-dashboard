@@ -18,6 +18,7 @@
                 <thead>
                   <tr>
                     <th scope="col">SL.</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Category</th>
@@ -31,6 +32,7 @@
                     @forelse ($posts as $post)
                         <tr>
                             <th style="padding-top:16px;" scope="row">{{$loop->iteration}}</th>
+                            <td style="padding-top:16px;"><img class="postImage" src="{{asset($post->image->url)}}" alt="Post Image"></td>
                             <td style="padding-top:16px;">{{$post->title}}</td>
                             <td style="padding-top:16px;">{{Str::limit($post->description, 50)}}</td>
                             <td style="padding-top:16px;">{{$post->category->name}}</td>
@@ -78,6 +80,9 @@
                     @endforelse
                 </tbody>
               </table>
+              <div class="mt-3">
+                {{ $posts->links() }}
+              </div>
         </div>
     </div>
 @endsection

@@ -4,7 +4,10 @@
 .tagSelect .select2-container--default.select2-container--focus .select2-selection--multiple {
     height: 200px !important;
 }
-
+.postImage{
+    width: 50px;
+    height: 40px;
+}
 /* Tag section starts */
 .multiTags .select2-container--default .select2-selection--multiple{
     height: 150px;

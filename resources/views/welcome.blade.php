@@ -17,7 +17,7 @@
                                     <img src="{{ asset($blogsbannar->image->url) }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>{{ $blogsbannar->title }}</h5>
-                                        <p>{{ $blogsbannar->description }}</p>
+                                        <p>{{ Str::words($blogsbannar->description, 20) }}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -81,38 +81,16 @@
                 <div class="col-12">
                     <h2 class="HTMediam border_bottom d-inline-block">Tranding</h2>
                 </div>
-                <div class="col-md-3 mt-4 mt-md-0">
-                    <div class="tranding_post d-flex justify-content-center">
-                        <img class="trandingImg" src="{{ asset('blogImage/banner1.jpg') }}" alt="">
-                        <div class="trandingContent ms-3">
-                            <p class="mb-0">Hi I am Md Yasin Khan a bot developer.</p>
+                @foreach ($blogsTrends as $blogsTrend)
+                    <div class="col-md-3 mt-4 mt-md-0">
+                        <div class="tranding_post d-flex justify-content-center">
+                            <img class="trandingImg" src="{{ asset($blogsTrend->image->url) }}" alt="">
+                            <div class="trandingContent ms-3">
+                                <p class="mb-0">{{ $blogsTrend->title }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 mt-4 mt-md-0">
-                    <div class="tranding_post d-flex justify-content-center">
-                        <img class="trandingImg" src="{{ asset('blogImage/banner1.jpg') }}" alt="">
-                        <div class="trandingContent ms-3">
-                            <p class="mb-0">Hi I am Md Yasin Khan a bot developer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-4 mt-md-0">
-                    <div class="tranding_post d-flex justify-content-center">
-                        <img class="trandingImg" src="{{ asset('blogImage/banner1.jpg') }}" alt="">
-                        <div class="trandingContent ms-3">
-                            <p class="mb-0">Hi I am Md Yasin Khan a bot developer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-4 mt-md-0">
-                    <div class="tranding_post d-flex justify-content-center">
-                        <img class="trandingImg" src="{{ asset('blogImage/banner1.jpg') }}" alt="">
-                        <div class="trandingContent ms-3">
-                            <p class="mb-0">Hi I am Md Yasin Khan a bot developer.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -128,85 +106,18 @@
                 <div class="col-12">
                     <h2 class="HTlarge border_bottom d-inline-block">Featcher post</h2>
                 </div>
-                <div class="col-md-4 padding_1">
-                    <a href="Thirdslidelabel">
-                        <div class="featcher_backImg" style="background-image: url({{ asset('blogImage/banner2.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
+                @foreach ($blogsfeatures as $blogsfeature)
+                    <div class="col-md-4 padding_1">
+                        <a href="Thirdslidelabel">
+                            <div class="featcher_backImg" style="background-image: url({{ asset($blogsfeature->image->url) }})">
+                                <div class="text-center featcher_content">
+                                    <h5>{{ $blogsfeature->title }}</h5>
+                                    <p class="mb-0">{{ Str::words($blogsfeature->description, 8) }}</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 padding_1">
-                    <a href="Thirdslidelabel">
-                        <div class="featcher_backImg" style="background-image: url({{ asset('blogImage/banner2.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 padding_1">
-                    <a href="Thirdslidelabel">
-                        <div class="featcher_backImg" style="background-image: url({{ asset('blogImage/banner2.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 padding_1">
-                    <a href="">
-                        <div class="featcher_backImg2" style="background-image: url({{ asset('blogImage/banner1.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 padding_1">
-                    <a href="">
-                        <div class="featcher_backImg2" style="background-image: url({{ asset('blogImage/banner2.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 padding_1">
-                    <a href="">
-                        <div class="featcher_backImg2" style="background-image: url({{ asset('blogImage/banner1.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 padding_1">
-                    <a href="">
-                        <div class="featcher_backImg2" style="background-image: url({{ asset('blogImage/banner2.jpg') }})">
-                            {{-- <img src="{{ asset('blogImage/banner1.jpg') }}" class="d-block w-100 bannar_sliderImg" alt="Bannaar image"> --}}
-                            <div class="text-center featcher_content">
-                                <h5>Third slide label</h5>
-                                <p class="mb-0">Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -223,36 +134,45 @@
                     <h2 class="HTlarge border_bottom d-inline-block">Letest post</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="letest_post">
-                        <img class="letest_postImg" src="{{ asset('blogImage/banner1.jpg') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="letest_post">
-                        <div class="letest_postContent">
-                            <p class="mb-3 letest_postContentP">Hi I am Md Yasin Khan a bot developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae molestias rerum dolorum ipsa velit totam ad aut eos sequi atque!. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere voluptate accusamus, eaque, quasi illum ipsum eos vel, modi atque perspiciatis corrupti! Eaque corporis modi sit officiis doloribus aut at ipsam voluptates soluta, excepturi libero eveniet voluptatibus qui minima cumque quis deserunt quo magnam temporibus! Sapiente ad laboriosam voluptates delectus error excepturi sint magnam earum, ut tempore architecto ipsam molestiae nam sequi cum! Minima atque et sunt rem quo esse vitae.</p>
-                            <a href="" class="linkText px-4 letest_link btn-warning fw-bold">Read more <i class="letest_linkIcon fa-solid fa-arrow-right-long"></i></a>
+            @foreach ($blogsLetests as $blogsLetest)
+                @if($loop->iteration % 2 == 0)
+                    <div class="row mt-5 mt-sm-5">
+                        <div class="col-md-5">
+                            <div class="letest_post">
+                                <img class="letest_postImg" src="{{ asset($blogsLetest->image->url) }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="letest_post">
+                                <div class="letest_postContent">
+                                    <h4>{{ $blogsLetest->title }}</h4>
+                                    <p>Published at <span class="text-secondary">{{ \Carbon\Carbon::parse($blogsPopular->created_at)->diffForHumans() }}</span></p>
+                                    <p class="mb-3 letest_postContentP">{{ Str::words($blogsLetest->description, 80) }}</p>
+                                    <a href="{{ route('blog.show', $blogsLetest->slug ) }}" class="linkText px-4 letest_link btn-warning fw-bold">Read more <i class="letest_linkIcon fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-4 mt-sm-5">
-                <div class="col-md-5 order-md-2">
-                    <div class="letest_post">
-                        <img class="letest_postImg" src="{{ asset('blogImage/banner2.jpg') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7 order-md-1">
-                    <div class="letest_post">
-                        <div class="letest_postContent">
-                            <p class="mb-3 letest_postContentP">Hi I am Md Yasin Khan a bot developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae molestias rerum dolorum ipsa velit totam ad aut eos sequi atque!. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere voluptate accusamus, eaque, quasi illum ipsum eos vel, modi atque perspiciatis corrupti! Eaque corporis modi sit officiis doloribus aut at ipsam voluptates soluta, excepturi libero eveniet voluptatibus qui minima cumque quis deserunt quo magnam temporibus! Sapiente ad laboriosam voluptates delectus error excepturi sint magnam earum, ut tempore architecto ipsam molestiae nam sequi cum! Minima atque et sunt rem quo esse vitae.</p>
-                            <a href="#" class="linkText letest_link px-4 btn-warning fw-bold">Read more <i class="letest_linkIcon fa-solid fa-arrow-right-long"></i></a>
+                @else
+                    <div class="row mt-5 mt-sm-5">
+                        <div class="col-md-5 order-md-2">
+                            <div class="letest_post">
+                                <img class="letest_postImg" src="{{ asset($blogsLetest->image->url) }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7 order-md-1">
+                            <div class="letest_post">
+                                <div class="letest_postContent">
+                                    <h4>{{ $blogsLetest->title }}</h4>
+                                    <p>Published at <span class="text-secondary">{{ \Carbon\Carbon::parse($blogsPopular->created_at)->diffForHumans() }}</span></p>
+                                    <p class="mb-3 letest_postContentP">{{ Str::words($blogsLetest->description, 80) }}</p>
+                                    <a href="{{ route('blog.show', $blogsLetest->slug ) }}" class="linkText letest_link px-4 btn-warning fw-bold">Read more <i class="letest_linkIcon fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                @endif
+            @endforeach
         </div>
     </section>
     {{----------------------

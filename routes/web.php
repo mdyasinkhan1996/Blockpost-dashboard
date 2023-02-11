@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('/', [BlogController::class, 'welCome']);
 Route::get('/blog',[BlogController::class, 'index']);
-Route::get('/show',[BlogController::class, 'show']);
+Route::get('/show/{slug}',[BlogController::class, 'show'])->name('blog.show');
 Route::get('Thirdslidelabel',[BlogController::class, 'Thirdslidelabel'])->name('Thirdslidelabel');
 
 
